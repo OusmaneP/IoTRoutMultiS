@@ -1,0 +1,222 @@
+E # 0 t 0 m 1 ce -1 msg -1
+SB v 1286 rid General-0-20240331-20:32:12-1152 b 1000
+KF p -1 c "" s ""
+MC id 1 c omnetpp::cModule t pocSimulation n pocSimulation cm 1
+MS id 1 d bgi=background/terrain,s;bgb=1700,1200
+MC id 2 c pocSimulation::Server t Server pid 1 n sink1
+GC m 2 g 0 n in o 0
+MS id 2 d i=device/antennatower_l
+MC id 3 c pocSimulation::Server t Server pid 1 n sink2
+GC m 3 g 0 n in o 0
+MS id 3 d i=device/antennatower_l
+MC id 4 c pocSimulation::Server t Server pid 1 n sink3
+GC m 4 g 0 n in o 0
+MS id 4 d i=device/antennatower_l
+MC id 5 c pocSimulation::Server t Server pid 1 n sink4
+GC m 5 g 0 n in o 0
+MS id 5 d i=device/antennatower_l
+MC id 6 c pocSimulation::Host t Host pid 1 n host[0]
+GC m 6 g 0 n in o 0
+MS id 6 d i=device/smallrouter_s
+MC id 7 c pocSimulation::Host t Host pid 1 n host[1]
+GC m 7 g 0 n in o 0
+MS id 7 d i=device/smallrouter_s
+MC id 8 c pocSimulation::Host t Host pid 1 n host[2]
+GC m 8 g 0 n in o 0
+MS id 8 d i=device/smallrouter_s
+MC id 9 c pocSimulation::Host t Host pid 1 n host[3]
+GC m 9 g 0 n in o 0
+MS id 9 d i=device/smallrouter_s
+MC id 10 c pocSimulation::Host t Host pid 1 n host[4]
+GC m 10 g 0 n in o 0
+MS id 10 d i=device/smallrouter_s
+MC id 11 c pocSimulation::Host t Host pid 1 n host[5]
+GC m 11 g 0 n in o 0
+MS id 11 d i=device/smallrouter_s
+MC id 12 c pocSimulation::Host t Host pid 1 n host[6]
+GC m 12 g 0 n in o 0
+MS id 12 d i=device/smallrouter_s
+MC id 13 c pocSimulation::Host t Host pid 1 n host[7]
+GC m 13 g 0 n in o 0
+MS id 13 d i=device/smallrouter_s
+MC id 14 c pocSimulation::Host t Host pid 1 n host[8]
+GC m 14 g 0 n in o 0
+MS id 14 d i=device/smallrouter_s
+MC id 15 c pocSimulation::Host t Host pid 1 n host[9]
+GC m 15 g 0 n in o 0
+MS id 15 d i=device/smallrouter_s
+MC id 16 c pocSimulation::Host t Host pid 1 n host[10]
+GC m 16 g 0 n in o 0
+MS id 16 d i=device/smallrouter_s
+MC id 17 c pocSimulation::Host t Host pid 1 n host[11]
+GC m 17 g 0 n in o 0
+MS id 17 d i=device/smallrouter_s
+MC id 18 c pocSimulation::Host t Host pid 1 n host[12]
+GC m 18 g 0 n in o 0
+MS id 18 d i=device/smallrouter_s
+MC id 19 c pocSimulation::Host t Host pid 1 n host[13]
+GC m 19 g 0 n in o 0
+MS id 19 d i=device/smallrouter_s
+MC id 20 c pocSimulation::Host t Host pid 1 n host[14]
+GC m 20 g 0 n in o 0
+MS id 20 d i=device/smallrouter_s
+MC id 21 c pocSimulation::Host t Host pid 1 n host[15]
+GC m 21 g 0 n in o 0
+MS id 21 d i=device/smallrouter_s
+MC id 22 c pocSimulation::Host t Host pid 1 n host[16]
+GC m 22 g 0 n in o 0
+MS id 22 d i=device/smallrouter_s
+MC id 23 c pocSimulation::Host t Host pid 1 n host[17]
+GC m 23 g 0 n in o 0
+MS id 23 d i=device/smallrouter_s
+MC id 24 c pocSimulation::Host t Host pid 1 n host[18]
+GC m 24 g 0 n in o 0
+MS id 24 d i=device/smallrouter_s
+MC id 25 c pocSimulation::Host t Host pid 1 n host[19]
+GC m 25 g 0 n in o 0
+MS id 25 d i=device/smallrouter_sMB sm 1 tm 2 m initialize(0)
+CM id 4 tid 4 eid 4 etid 4 c omnetpp::cMessage n end-reception pe -1
+MS id 2 d p=425;i=device/antennatower_l
+MS id 2 d p=425,300;i=device/antennatower_l
+ME
+MB sm 1 tm 3 m initialize(0)
+CM id 5 tid 5 eid 5 etid 5 c omnetpp::cMessage n end-reception pe -1
+MS id 3 d p=1275;i=device/antennatower_l
+MS id 3 d p=1275,300;i=device/antennatower_l
+ME
+MB sm 1 tm 4 m initialize(0)
+CM id 6 tid 6 eid 6 etid 6 c omnetpp::cMessage n end-reception pe -1
+MS id 4 d p=425;i=device/antennatower_l
+MS id 4 d p=425,900;i=device/antennatower_l
+ME
+MB sm 1 tm 5 m initialize(0)
+CM id 7 tid 7 eid 7 etid 7 c omnetpp::cMessage n end-reception pe -1
+MS id 5 d p=1275;i=device/antennatower_l
+MS id 5 d p=1275,900;i=device/antennatower_l
+ME
+MB sm 1 tm 6 m initialize(0)
+- INFO (Host)pocSimulation.host[0]:parent module (nullptr)
+ME
+ id 6 d p=932;i=device/smallrouter_s
+MS id 6 d p=932,711;i=device/smallrouter_s
+ME
+MB sm 1 tm 7 m initialize(0)
+- INFO (Host)pocSimulation.host[1]:parent module (nullptr)
+MS id 7 d p=1215;i=device/smallrouter_s
+MS id 7 d p=1215,1013;i=device/smallrouter_s
+ME
+MB sm 1 tm 8 m initialize(0)
+- INFO (Host)pocSimulation.host[2]:parent module (nullptr)
+MS id 8 d p=1024;i=device/smallrouter_s
+MS id 8 d p=1024,1029;i=device/smallrouter_s
+ME
+MB sm 1 tm 9 m initialize(0)
+- INFO (Host)pocSimulation.host[3]:parent module (nullptr)
+MS id 9 d p=926;i=device/smallrouter_s
+MS id 9 d p=926,1016;i=device/smallrouter_s
+ME
+MB sm 1 tm 10 m initialize(0)
+- INFO (Host)pocSimulation.host[4]:parent module (nullptr)
+MS id 10 d p=720;i=device/smallrouter_s
+MS id 10 d p=720,748;i=device/smallrouter_s
+ME
+MB sm 1 tm 11 m initialize(0)
+- INFO (Host)pocSimulation.host[5]:parent module (nullptr)
+MS id 11 d p=1098;i=device/smallrouter_s
+MS id 11 d p=1098,461;i=device/smallrouter_s
+ME
+MB sm 1 tm 12 m initialize(0)
+- INFO (Host)pocSimulation.host[6]:parent module (nullptr)
+MS id 12 d p=743;i=device/smallrouter_s
+MS id 12 d p=743,357;i=device/smallrouter_s
+ME
+MB sm 1 tm 13 m initialize(0)
+- INFO (Host)pocSimulation.host[7]:parent module (nullptr)
+MS id 13 d p=1516;i=device/smallrouter_s
+MS id 13 d p=1516,68;i=device/smallrouter_s
+ME
+MB sm 1 tm 14 m initialize(0)
+- INFO (Host)pocSimulation.host[8]:parent module (nullptr)
+MS id 14 d p=1638;i=device/smallrouter_s
+MS id 14 d p=1638,327;i=device/smallrouter_s
+ME
+MB sm 1 tm 15 m initialize(0)
+- INFO (Host)pocSimulation.host[9]:parent module (nullptr)
+MS id 15 d p=651;i=device/smallrouter_s
+MS id 15 d p=651,573;i=device/smallrouter_s
+ME
+MB sm 1 tm 16 m initialize(0)
+- INFO (Host)pocSimulation.host[10]:parent module (nullptr)
+MS id 16 d p=1345;i=device/smallrouter_s
+MS id 16 d p=1345,974;i=device/smallrouter_s
+ME
+MB sm 1 tm 17 m initialize(0)
+- INFO (Host)pocSimulation.host[11]:parent module (nullptr)
+MS id 17 d p=899;i=device/smallrouter_s
+MS id 17 d p=899,575;i=device/smallrouter_s
+ME
+MB sm 1 tm 18 m initialize(0)
+- INFO (Host)pocSimulation.host[12]:parent module (nullptr)
+MS id 18 d p=965;i=device/smallrouter_s
+MS id 18 d p=965,471;i=device/smallrouter_s
+ME
+MB sm 1 tm 19 m initialize(0)
+- INFO (Host)pocSimulation.host[13]:parent module (nullptr)
+MS id 19 d p=1573;i=device/smallrouter_s
+MS id 19 d p=1573,1003;i=device/smallrouter_s
+ME
+MB sm 1 tm 20 m initialize(0)
+- INFO (Host)pocSimulation.host[14]:parent module (nullptr)
+MS id 20 d p=120;i=device/smallrouter_s
+MS id 20 d p=120,404;i=device/smallrouter_s
+ME
+MB sm 1 tm 21 m initialize(0)
+- INFO (Host)pocSimulation.host[15]:parent module (nullptr)
+MS id 21 d p=148;i=device/smallrouter_s
+MS id 21 d p=148,777;i=device/smallrouter_s
+ME
+MB sm 1 tm 22 m initialize(0)
+- INFO (Host)pocSimulation.host[16]:parent module (nullptr)
+MS id 22 d p=34;i=device/smallrouter_s
+MS id 22 d p=34,441;i=device/smallrouter_s
+ME
+MB sm 1 tm 23 m initialize(0)
+- INFO (Host)pocSimulation.host[17]:parent module (nullptr)
+MS id 23 d p=1415;i=device/smallrouter_s
+MS id 23 d p=1415,1148;i=device/smallrouter_s
+ME
+MB sm 1 tm 24 m initialize(0)
+- INFO (Host)pocSimulation.host[18]:parent module (nullptr)
+MS id 24 d p=1322;i=device/smallrouter_s
+MS id 24 d p=1322,168;i=device/smallrouter_s
+ME
+MB sm 1 tm 25 m initialize(0)
+- INFO (Host)pocSimulation.host[19]:parent module (nullptr)
+MS id 25 d p=1479;i=device/smallrouter_s
+MS id 25 d p=1479,1044;i=device/smallrouter_s
+ME
+MS id 2 d i2=status/off;p=425,300;i=device/antennatower_l
+MS id 3 d i2=status/off;p=1275,300;i=device/antennatower_l
+MS id 4 d i2=status/off;p=425,900;i=device/antennatower_l
+MS id 5 d i2=status/off;p=1275,900;i=device/antennatower_l
+MS id 6 d t=,,#808000;p=932,711;i=device/smallrouter_s
+MS id 7 d t=,,#808000;p=1215,1013;i=device/smallrouter_s
+MS id 8 d t=,,#808000;p=1024,1029;i=device/smallrouter_s
+MS id 9 d t=,,#808000;p=926,1016;i=device/smallrouter_s
+MS id 10 d t=,,#808000;p=720,748;i=device/smallrouter_s
+MS id 11 d t=,,#808000;p=1098,461;i=device/smallrouter_s
+MS id 12 d t=,,#808000;p=743,357;i=device/smallrouter_s
+MS id 13 d t=,,#808000;p=1516,68;i=device/smallrouter_s
+MS id 14 d t=,,#808000;p=1638,327;i=device/smallrouter_s
+MS id 15 d t=,,#808000;p=651,573;i=device/smallrouter_s
+MS id 16 d t=,,#808000;p=1345,974;i=device/smallrouter_s
+MS id 17 d t=,,#808000;p=899,575;i=device/smallrouter_s
+MS id 18 d t=,,#808000;p=965,471;i=device/smallrouter_s
+MS id 19 d t=,,#808000;p=1573,1003;i=device/smallrouter_s
+MS id 20 d t=,,#808000;p=120,404;i=device/smallrouter_s
+MS id 21 d t=,,#808000;p=148,777;i=device/smallrouter_s
+MS id 22 d t=,,#808000;p=34,441;i=device/smallrouter_s
+MS id 23 d t=,,#808000;p=1415,1148;i=device/smallrouter_s
+MS id 24 d t=,,#808000;p=1322,168;i=device/smallrouter_s
+MS id 25 d t=,,#808000;p=1479,1044;i=device/smallrouter_s
+SE e 0 c 13 m "No more events, simulation completed -- at t=0s, event #0"
