@@ -1,12 +1,12 @@
 #
-# OMNeT++/OMNEST Makefile for aloha
+# OMNeT++/OMNEST Makefile for IoTRoutMultiS
 #
 # This file was generated with the command:
 #  opp_makemake -f --deep
 #
 
 # Name of target to be created (-o option)
-TARGET = aloha$(D)$(EXE_SUFFIX)
+TARGET = IoTRoutMultiS$(D)$(EXE_SUFFIX)
 TARGET_DIR = .
 
 # User interface (uncomment one) (-u option)

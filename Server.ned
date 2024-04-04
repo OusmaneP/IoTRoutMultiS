@@ -9,9 +9,15 @@ simple Server
         @signal[collisionLength](type="simtime_t");  // the length of the last collision period at the end of the collision period
         @signal[channelState](type="long");
 
+		double txRate @unit(bps);          // transmission rate
+		volatile double iaTime @unit(s);   // packet interarrival time
+		volatile int pkLenBits @unit(b);   // packet length in bits
         double sinkX @unit(m); // the x coordinate of the server
         double sinkY @unit(m); // the y coordinate of the server
         int numHosts;  // number of hosts 
+        
+        double SbWidth @unit(m); 
+        double SbHeight @unit(m);
 
         double animationHoldTimeOnCollision @unit(s) = default(0s); // in animation time
 

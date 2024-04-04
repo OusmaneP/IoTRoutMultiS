@@ -27,6 +27,7 @@
  *     int destination;
  *     string msgContent;
  *     int hopCount = 0;
+ *     string datas;
  * }
  * </pre>
  */
@@ -37,6 +38,7 @@ class PocMsg : public ::omnetpp::cPacket
     int destination;
     ::omnetpp::opp_string msgContent;
     int hopCount;
+    ::omnetpp::opp_string datas;
 
   private:
     void copy(const PocMsg& other);
@@ -63,6 +65,8 @@ class PocMsg : public ::omnetpp::cPacket
     virtual void setMsgContent(const char * msgContent);
     virtual int getHopCount() const;
     virtual void setHopCount(int hopCount);
+    virtual const char * getDatas() const;
+    virtual void setDatas(const char * datas);
 };
 
 inline void doParsimPacking(omnetpp::cCommBuffer *b, const PocMsg& obj) {obj.parsimPack(b);}

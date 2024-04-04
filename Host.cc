@@ -73,23 +73,9 @@ void Host::handleMessage(cMessage *msg)
 {
     getParentModule()->getCanvas()->setAnimationSpeed(transmissionEdgeAnimationSpeed, this);
     PocMsg *ttmsg = check_and_cast<PocMsg *>(msg);
-    if (strcmp("sendingId to server", ttmsg->getMsgContent()) == 0){
-        char msgname[] = "sendingId to server";
-        sprintf(msgname, "sendingId to server");
-        PocMsg *msgToSend = generateMessage(msgname,server->getId());
-        state = TRANSMIT;
-        emit(stateSignal, state);
-        simtime_t duration = pkLenBits->intValue() / txRate;
-        sendDirect(msgToSend, radioDelay, duration, server->gate("in"));
-
-        //scheduleAt(getId()+numberOfHosts, newMessage);
-
-        // let visualization code know about the new packet
-        if (transmissionRing != nullptr) {
-            delete lastPacket;
-            lastPacket = msgToSend->dup();
+    if (strcmp("Sending my LeaderID", ttmsg->getMsgContent()) == 0){
+            EV<< "I received ID from " << ttmsg->getSource() << "\n";
         }
-    }
     //ASSERT(msg == endTxEvent);
 
     else {

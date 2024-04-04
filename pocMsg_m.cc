@@ -209,6 +209,7 @@ void PocMsg::copy(const PocMsg& other)
     this->destination = other.destination;
     this->msgContent = other.msgContent;
     this->hopCount = other.hopCount;
+    this->datas = other.datas;
 }
 
 void PocMsg::parsimPack(omnetpp::cCommBuffer *b) const
@@ -218,6 +219,7 @@ void PocMsg::parsimPack(omnetpp::cCommBuffer *b) const
     doParsimPacking(b,this->destination);
     doParsimPacking(b,this->msgContent);
     doParsimPacking(b,this->hopCount);
+    doParsimPacking(b,this->datas);
 }
 
 void PocMsg::parsimUnpack(omnetpp::cCommBuffer *b)
@@ -227,6 +229,7 @@ void PocMsg::parsimUnpack(omnetpp::cCommBuffer *b)
     doParsimUnpacking(b,this->destination);
     doParsimUnpacking(b,this->msgContent);
     doParsimUnpacking(b,this->hopCount);
+    doParsimUnpacking(b,this->datas);
 }
 
 int PocMsg::getSource() const
@@ -267,6 +270,16 @@ int PocMsg::getHopCount() const
 void PocMsg::setHopCount(int hopCount)
 {
     this->hopCount = hopCount;
+}
+
+const char * PocMsg::getDatas() const
+{
+    return this->datas.c_str();
+}
+
+void PocMsg::setDatas(const char * datas)
+{
+    this->datas = datas;
 }
 
 class PocMsgDescriptor : public omnetpp::cClassDescriptor
@@ -334,7 +347,7 @@ const char *PocMsgDescriptor::getProperty(const char *propertyname) const
 int PocMsgDescriptor::getFieldCount() const
 {
     omnetpp::cClassDescriptor *basedesc = getBaseClassDescriptor();
-    return basedesc ? 4+basedesc->getFieldCount() : 4;
+    return basedesc ? 5+basedesc->getFieldCount() : 5;
 }
 
 unsigned int PocMsgDescriptor::getFieldTypeFlags(int field) const
@@ -350,8 +363,9 @@ unsigned int PocMsgDescriptor::getFieldTypeFlags(int field) const
         FD_ISEDITABLE,
         FD_ISEDITABLE,
         FD_ISEDITABLE,
+        FD_ISEDITABLE,
     };
-    return (field>=0 && field<4) ? fieldTypeFlags[field] : 0;
+    return (field>=0 && field<5) ? fieldTypeFlags[field] : 0;
 }
 
 const char *PocMsgDescriptor::getFieldName(int field) const
@@ -367,8 +381,9 @@ const char *PocMsgDescriptor::getFieldName(int field) const
         "destination",
         "msgContent",
         "hopCount",
+        "datas",
     };
-    return (field>=0 && field<4) ? fieldNames[field] : nullptr;
+    return (field>=0 && field<5) ? fieldNames[field] : nullptr;
 }
 
 int PocMsgDescriptor::findField(const char *fieldName) const
@@ -379,6 +394,7 @@ int PocMsgDescriptor::findField(const char *fieldName) const
     if (fieldName[0]=='d' && strcmp(fieldName, "destination")==0) return base+1;
     if (fieldName[0]=='m' && strcmp(fieldName, "msgContent")==0) return base+2;
     if (fieldName[0]=='h' && strcmp(fieldName, "hopCount")==0) return base+3;
+    if (fieldName[0]=='d' && strcmp(fieldName, "datas")==0) return base+4;
     return basedesc ? basedesc->findField(fieldName) : -1;
 }
 
@@ -395,8 +411,9 @@ const char *PocMsgDescriptor::getFieldTypeString(int field) const
         "int",
         "string",
         "int",
+        "string",
     };
-    return (field>=0 && field<4) ? fieldTypeStrings[field] : nullptr;
+    return (field>=0 && field<5) ? fieldTypeStrings[field] : nullptr;
 }
 
 const char **PocMsgDescriptor::getFieldPropertyNames(int field) const
@@ -467,6 +484,7 @@ std::string PocMsgDescriptor::getFieldValueAsString(void *object, int field, int
         case 1: return long2string(pp->getDestination());
         case 2: return oppstring2string(pp->getMsgContent());
         case 3: return long2string(pp->getHopCount());
+        case 4: return oppstring2string(pp->getDatas());
         default: return "";
     }
 }
@@ -485,6 +503,7 @@ bool PocMsgDescriptor::setFieldValueAsString(void *object, int field, int i, con
         case 1: pp->setDestination(string2long(value)); return true;
         case 2: pp->setMsgContent((value)); return true;
         case 3: pp->setHopCount(string2long(value)); return true;
+        case 4: pp->setDatas((value)); return true;
         default: return false;
     }
 }

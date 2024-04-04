@@ -15,11 +15,22 @@ class Server : public cSimpleModule
   private:
     // state variables, event pointers
     bool channelBusy;
+    simtime_t radioDelay;
+    double txRate;
+    cPar *iaTime;
+    cPar *pkLenBits;
     cMessage *endRxEvent;
     std::list<int> HostsIdList;
     int numberOfHosts;
     int numberOfMessagesForInitialization;
+    std::string sinkName;
 
+    cModule *host;
+    PocMsg *newMessage;
+    double aoiWidth;
+    double aoiheight;
+    double sinkX;
+    double sinkY;
     long currentCollisionNumFrames;
     long receiveCounter;
     simtime_t recvStartTime;
@@ -32,6 +43,8 @@ class Server : public cSimpleModule
     simsignal_t collisionLengthSignal;
     simsignal_t collisionSignal;
 
+    const double propagationSpeed = 299792458.0;
+
   public:
     Server();
     virtual ~Server();
@@ -39,6 +52,7 @@ class Server : public cSimpleModule
   protected:
     virtual void initialize() override;
     virtual void handleMessage(cMessage *msg) override;
+    virtual PocMsg *generateMessage(char msgname[], int dest, char  items[]);
     virtual void finish() override;
     virtual void refreshDisplay() const override;
 };

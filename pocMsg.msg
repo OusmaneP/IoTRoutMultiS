@@ -19,4 +19,5 @@ message PocMsg extends cPacket
     int destination;
     string msgContent;
     int hopCount = 0;
+    string datas;
 }
